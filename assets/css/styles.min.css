@@ -328,8 +328,8 @@
   margin-bottom: 5px;
 }
 .img {
-  width: 15%;
-  aspect-ratio: 3/2;
+  width: 10%;
+  aspect-ratio: 3/4;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
