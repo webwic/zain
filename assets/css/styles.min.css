@@ -334,3 +334,11 @@
   mix-blend-mode: multiply;
   padding-right: 0px;
 }
+
+/* Media query for mobile and tablet views */
+@media (max-width: 1023px) {
+  .img {
+    width: 10%;
+  }
+}
+
