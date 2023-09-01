@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 exports.handler = async (event, context) => {
   console.log("Event Body:", event.body); // Add this line for debugging
 
-  
+
   const { name, subject, email, message } = JSON.parse(event.body);
   // Configure your email transport using nodemailer
   const transporter = nodemailer.createTransport({
@@ -13,6 +13,12 @@ exports.handler = async (event, context) => {
       pass: process.env.GMAIL_PASSWORD, // Use environment variable for password
     },
   });
+
+
+
+
+
+  
 
   // Email content
   const mailOptions = {
