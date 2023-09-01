@@ -1,3 +1,5 @@
+
+
 // JavaScript code to handle form submission
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -27,13 +29,14 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
       body: JSON.stringify(formData),
     });
 
-    if (response.ok) {
-      // Handle a successful response (e.g., redirect to a thank-you page)
-      window.location.href = "/thank-you.html"; // Replace with the actual URL of your thank-you page
-    } else {
-      // Handle errors (e.g., show an error message)
-      console.error("Email could not be sent.");
-    }
+    // if (response.ok) {
+    //   // Handle a successful response (e.g., redirect to a thank-you page)
+    //   window.location.href = "/thank-you.html"; // Replace with the actual URL of your thank-you page
+    // } else {
+    //   console.log(error);
+    //   // Handle errors (e.g., show an error message)
+    //   console.error("Email could not be sent.");
+    // }
   } catch (error) {
     console.error("An error occurred:", error);
   }
