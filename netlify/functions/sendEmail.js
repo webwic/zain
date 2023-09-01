@@ -1,8 +1,9 @@
 const nodemailer = require("nodemailer");
 
 exports.handler = async (event, context) => {
-  const { name, subject, email, message } = JSON.parse(event.body);
+  console.log("Event Body:", event.body); // Add this line for debugging
 
+  const { name, subject, email, message } = JSON.parse(event.body);
   // Configure your email transport using nodemailer
   const transporter = nodemailer.createTransport({
     service: "Gmail",
