@@ -14,6 +14,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     email,
     message,
   };
+  console.log("Form Data:", formData);
+
 
   // Send the data to your serverless function
   try {
