@@ -1,4 +1,3 @@
-// In your serverless function (e.g., sendEmail.js)
 const nodemailer = require("nodemailer");
 
 exports.handler = async (event, context) => {
@@ -6,18 +5,17 @@ exports.handler = async (event, context) => {
 
   // Configure your email transport using nodemailer
   const transporter = nodemailer.createTransport({
-    // Configure your email service here (e.g., Gmail)
     service: "Gmail",
     auth: {
-      user: "webwicquery@gmail.com",
-      pass: "AXbycz02$",
+      user: process.env.GMAIL_USER, // Use environment variable for email
+      pass: process.env.GMAIL_PASSWORD, // Use environment variable for password
     },
   });
 
   // Email content
   const mailOptions = {
     from: email,
-    to: "info@zainpropertymanagement.com",
+    to: "info@webwic.com",
     subject,
     text: `Name: ${name}\nSubject: ${subject}\nEmail: ${email}\nMessage:\n${message}`,
   };
