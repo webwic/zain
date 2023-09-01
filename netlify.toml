@@ -1,7 +1,8 @@
 [[redirects]]
-  from = "/.netlify/functions/sendEmail"  # The URL path to your function
-  to = "/.netlify/functions/sendEmail"    # The URL path to your function
-  status = 200                             # The HTTP status code for the response
-  force = true                             # Force redirect, even for POST requests
-  headers = { "Content-Type" = "application/json" }
-  methods = ["POST"]                       # Allow only POST requests
+  from = "/.netlify/functions/sendEmail"  
+  to = "/.netlify/functions/sendEmail"    
+  status = 200                           
+  force = true                             
+  [headers]
+    "Content-Type" = "application/json"
+  methods = ["POST"]
