@@ -54,7 +54,14 @@
               id="email" name="email" required></div>
           <div class="mb-3"><label class="form-label" for="message">Message</label><textarea class="form-control"
               id="message" name="message"></textarea></div>
-          <div class="mb-3"><button class="btn btn-primary" type="submit">Send</button></div>
+              <!-- Add a loading symbol and success message elements -->
+<div class="mb-3">
+  <div id="loadingSymbol" style="display: none;">Sending...</div>
+  <div id="successMessage" style="display: none; color: green;">Email sent successfully. Our team will contact you shortly.</div>
+  <div class="mb-3"><button class="btn btn-primary" type="submit">Send</button></div>
+</div>
+
+         
         </form>
       </div>
     </section>

@@ -14,16 +14,10 @@ exports.handler = async (event, context) => {
     },
   });
 
-
-
-
-
-  
-
   // Email content
   const mailOptions = {
     from: email,
-    to: "info@webwic.com",
+    to: "info@zainpropertymanagement.com",
     subject,
     text: `Name: ${name}\nSubject: ${subject}\nEmail: ${email}\nMessage:\n${message}`,
   };
