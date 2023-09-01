@@ -26,8 +26,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     });
 
     if (response.ok) {
-      // Handle a successful response (e.g., show a success message)
-      console.log("Email sent successfully!");
+      // Handle a successful response (e.g., redirect to a thank-you page)
+      window.location.href = "/thank-you.html"; // Replace with the actual URL of your thank-you page
     } else {
       // Handle errors (e.g., show an error message)
       console.error("Email could not be sent.");
