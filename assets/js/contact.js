@@ -1,30 +1,38 @@
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    var formData = new FormData(this);
-    
-    // Construct the URL
-    var url = "https://webwic-contact.azurewebsites.net/";
-    
-    // Prepare the request body
-    var requestBody = {
-      method: 'POST',
-      body: formData
-    };
-    
-    // Send the request using fetch
-    fetch(url, requestBody)
-      .then(function(response) {
-        if (response.ok) {
-          alert("Message sent successfully!");
-          // Clear the form fields
-          document.getElementById("contactForm").reset();
-        } else {
-          alert("An error occurred while sending the message.");
-        }
-      })
-      .catch(function(error) {
-        alert("An error occurred while sending the message.");
-        console.error(error);
-      });
-  });
+// JavaScript code to handle form submission
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const subject = document.getElementById("subject").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Create a JSON object with the form data
+  const formData = {
+    name,
+    subject,
+    email,
+    message,
+  };
+
+  // Send the data to your serverless function
+  try {
+    const response = await fetch("/.netlify/functions/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      // Handle a successful response (e.g., show a success message)
+      console.log("Email sent successfully!");
+    } else {
+      // Handle errors (e.g., show an error message)
+      console.error("Email could not be sent.");
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+});
