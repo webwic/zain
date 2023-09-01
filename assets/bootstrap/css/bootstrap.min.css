@@ -4141,6 +4141,11 @@ fieldset:disabled .btn {
 .card-text:last-child {
   margin-bottom: 0;
 }
+.card-text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .card-link + .card-link {
   margin-left: var(--bs-card-spacer-x);
 }
